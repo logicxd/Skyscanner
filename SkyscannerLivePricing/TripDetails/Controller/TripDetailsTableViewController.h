@@ -9,10 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "FBShimmeringView.h"
 
+
+typedef NS_ENUM(NSInteger, TripDetailsCellType) {
+    TripDetailsCellTypeBookingDetails,
+    TripDetailsCellTypeDirectionality,
+    TripDetailsCellTypeSegment,
+    TripDetailsCellTypeLayover,
+    TripDetailsCellTypeEmpty
+};
+
+
 @class SkyscannerLeg;
 
 @interface TripDetailsTableViewController : UITableViewController
+
 @property (nonatomic, copy) NSString *requestID;
 @property (nonatomic, strong) SkyscannerLeg *inboundLeg;
 @property (nonatomic, strong) SkyscannerLeg *outboundLeg;
+
 @end

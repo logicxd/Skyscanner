@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class TripDetailsSegment;
+@class SkyscannerAgent, SkyscannerSegment;
 
 @interface SkyscannerBookingItem : NSObject
 
-@property (nonatomic, strong) NSNumber *agentID;
+@property (nonatomic, strong) SkyscannerAgent *agent;
 @property (nonatomic, copy) NSString *status;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSURL *bookingOptionLink;
-@property (nonatomic, strong) NSArray <TripDetailsSegment *> *segmentID;
+@property (nonatomic, strong) NSArray <SkyscannerSegment *> *segments;
 
 @end

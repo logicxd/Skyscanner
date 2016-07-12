@@ -36,12 +36,13 @@
     NSArray *segments = [self segmentsWithJson:json[@"Segments"]];
     NSArray *places = [self placesWithJson:json[@"Places"]];
     NSArray *carriers = [self carriersWithJson:json[@"Carriers"]];
-    // Populate Booking Options and Booking Items
+    NSArray *bookingOptions = [self bookingOptionsWithJson:json[@"BookingOptions"]];
     
     request.query = query;
     request.segments = segments;
     request.places = places;
     request.carriers = carriers;
+    request.bookingOptions = bookingOptions;
 
     return request;
 }
@@ -55,13 +56,15 @@
                                                        @"Currency" : @"currency",
                                                        @"Locale" : @"locale",
                                                        @"Adults" : @"adults",
-                                                       @"Children" : @"infants",
-                                                       @"Infants" : @"amountInfants",
-                                                       @"OutboundDate" : @"outboundDate",
-                                                       @"InboundDate" : @"inboundDate",
+                                                       @"Children" : @"children",
+                                                       @"Infants" : @"infants",
                                                        @"LocationSchema" : @"locationSchema",
                                                        @"CabinClass" : @"cabinClass",
                                                        }];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    query.outboundDate = [formatter dateFromString:queryJson[@"OutboundDate"]];
+    query.inboundDate = [formatter dateFromString:queryJson[@"InboundDate"]];
     
     NSString *stupidTripDetailsOriginPlaceId = [queryJson objectForKey:@"OriginPlace"];
     NSString *stupidTripDetailsDestinationPlaceId = [queryJson objectForKey:@"DestinationPlace"];
@@ -76,6 +79,38 @@
         query.destinationPlace = [[SkyscannerFactory sharedFactory] skyscannerPlaceWithId:@(stupidTripDetailsDestinationPlaceId.integerValue)];
     }
     return query;
+}
+
++ (NSArray<SkyscannerBookingOption *> *)bookingOptionsWithJson:(NSArray<NSDictionary *> *)bookingOptionsJson {
+    NSMutableArray<SkyscannerBookingOption *> *bookingOptions = [NSMutableArray array];
+    for (NSDictionary *bookingOptionDictionary in bookingOptionsJson) {
+        SkyscannerBookingOption *bookingOption = [SkyscannerBookingOption new];
+        bookingOption.bookingItems = [self bookingItemsWithJson:bookingOptionDictionary[@"BookingItems"]];
+        
+        [bookingOptions addObject:bookingOption];
+    }
+    
+    return bookingOptions;
+}
+
++ (NSArray<SkyscannerBookingItem *> *)bookingItemsWithJson:(NSArray<NSDictionary *> *)bookingItemsJson {
+    NSMutableArray<SkyscannerBookingItem *> *bookingItems = [NSMutableArray array];
+    for (NSDictionary *bookingItemDictionary in bookingItemsJson) {
+        SkyscannerBookingItem *bookingItem = [SkyscannerBookingItem new];
+        [[RPJSONMapper sharedInstance] mapJSONValuesFrom:bookingItemDictionary
+                                              toInstance:bookingItem
+                                            usingMapping:@{
+                                                           @"Status" : @"status",
+                                                           @"Price" : @"price"
+                                                           }];
+        bookingItem.agent = [[SkyscannerFactory sharedFactory] skyscannerAgentWithId:bookingItemDictionary[@"AgentID"]];
+        NSString *urlString = bookingItemDictionary[@"Deeplink"];
+        bookingItem.bookingOptionLink = [NSURL URLWithString:urlString];
+        bookingItem.segments = [self segmentsWithIds:bookingItemDictionary[@"SegmentIds"]];
+        
+        [bookingItems addObject:bookingItem];
+    }
+    return bookingItems;
 }
 
 // -----------------------------------------------------------------------------------------------------

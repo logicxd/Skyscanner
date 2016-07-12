@@ -54,7 +54,7 @@
     
     SkyscannerNetworking *networkJson = [SkyscannerNetworking sharedNetworking];
     [networkJson postSessionWithOriginPlace:@"sfo-sky"
-                           destinationPlace:@"sna-sky" //SNA, JFK, LAX, SFO
+                           destinationPlace:@"sna-sky" //SNA, JFK, LAX, SFO, HNL
                                outboundDate:@"2016-07-25"
                                 inboundDate:@"2016-07-27"
                                  completion:^(NSString *requestID, NSError *error) {
@@ -215,7 +215,7 @@
     NSString *first_arrivalTime = [formatter stringFromDate:itinerary.outboundLeg.timeArrival];
     NSString *first_travelTime = [NSString stringWithFormat:@"%@ - %@", first_departureTime, first_arrivalTime];
     NSMutableAttributedString *first_attributedTravelTime =
-    [HelperClass addAttributeToAllOccurrences:first_travelTime
+    [HelperClass addAttributesToAllOccurrences:first_travelTime
                                        target:@"[AP]M"
                                        option:NSRegularExpressionSearch
                                withAttributes:@{
@@ -226,7 +226,7 @@
     NSString *second_arrivalTime = [formatter stringFromDate:itinerary.inboundLeg.timeArrival];
     NSString *second_travelTime = [NSString stringWithFormat:@"%@ - %@", second_departureTime, second_arrivalTime];
     NSMutableAttributedString *second_attributedTravelTime =
-    [HelperClass addAttributeToAllOccurrences:second_travelTime
+    [HelperClass addAttributesToAllOccurrences:second_travelTime
                                        target:@"[AP]M"
                                        option:NSRegularExpressionSearch
                                withAttributes:@{

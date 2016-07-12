@@ -15,11 +15,13 @@
 
 
 @interface SkyscannerFactory()
+
 @property (nonatomic, strong) NSMutableDictionary<id, SkyscannerPlace *> *placesByID;
 @property (nonatomic, strong) NSMutableDictionary<id, SkyscannerLeg *> *legsByID;
 @property (nonatomic, strong) NSMutableDictionary<id, SkyscannerSegment *> *segmentsByID;
 @property (nonatomic, strong) NSMutableDictionary<id, SkyscannerAgent *> *agentsByID;
-@property (nonatomic, strong) NSMutableDictionary <id, SkyscannerCarrier *> *carriersByID;
+@property (nonatomic, strong) NSMutableDictionary<id, SkyscannerCarrier *> *carriersByID;
+
 @end
 
 @implementation SkyscannerFactory
@@ -89,10 +91,5 @@
     }
     return carrier;
 }
-
-
-
-
-
 
 @end

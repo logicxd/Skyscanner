@@ -94,11 +94,9 @@ static const NSString *apiKey = @"pl448015395202178988289540667914";
           NSString *responseURL= [responseHTTP allHeaderFields][@"Location"];
           NSString *itineraryKey = [[responseURL componentsSeparatedByString:@"/"] lastObject];
           completion(itineraryKey, nil);
-          NSLog(@"SUCCESS PUT");
       }
       failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
           completion(nil, error);
-          NSLog(@"FAIL PUT");
       }];
 }
 

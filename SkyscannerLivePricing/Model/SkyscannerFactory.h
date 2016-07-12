@@ -25,6 +25,4 @@
 - (SkyscannerAgent *)skyscannerAgentWithId:(id)agentID;
 - (SkyscannerCarrier *)skyscannerCarrierWithId:(id)carrierID;
 
-//- (NSArray <SkyscannerPlace *> *)skyscannerPlaces;
-
 @end

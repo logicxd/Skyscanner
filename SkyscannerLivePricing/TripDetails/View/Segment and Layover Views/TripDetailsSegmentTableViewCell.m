@@ -29,9 +29,9 @@
         self.destinationView.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.destinationView];
         
-        self.topFlightLine = [[UIView alloc] init];
-        self.topFlightLine.backgroundColor = [UIColor colorWithRed:0 green:.667f blue:1 alpha:1];
-        [self.contentView addSubview:self.topFlightLine];
+        self.flightLine = [[UIView alloc] init];
+        self.flightLine.backgroundColor = [UIColor colorWithRed:0 green:.667f blue:1 alpha:1];
+        [self.contentView addSubview:self.flightLine];
         
         self.topCircleView = [[UIView alloc] init];
         self.topCircleView.backgroundColor = [UIColor whiteColor];
@@ -85,24 +85,24 @@
         make.left.equalTo(self.flightView.mas_left);
     }];
     
-    [self.topFlightLine mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.flightLine mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(20);
         make.width.equalTo(@2.5f);
         make.top.equalTo(self.topCircleView.mas_bottom);
         make.bottom.equalTo(self.bottomCircleView.mas_top);
     }];
     [self.topCircleView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.topFlightLine);
+        make.centerX.equalTo(self.flightLine);
         make.centerY.equalTo(self.originView);
         make.width.height.equalTo(@14);
     }];
     [self.airplaneImage mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.topFlightLine);
+        make.centerX.equalTo(self.flightLine);
         make.centerY.equalTo(self.flightView);
         make.width.height.equalTo(@24);
     }];
     [self.bottomCircleView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.topFlightLine);
+        make.centerX.equalTo(self.flightLine);
         make.centerY.equalTo(self.destinationView);
         make.width.height.equalTo(@14);
     }];

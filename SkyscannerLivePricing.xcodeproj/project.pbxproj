@@ -276,8 +276,6 @@
 			children = (
 				68FCAC491D2F14DF00C0FD5A /* Entypo_2708(0)_32.png */,
 				68FCAC4A1D2F14DF00C0FD5A /* Entypo_2708(0)_64.png */,
-				68FCAC6A1D2F152800C0FD5A /* SkyscannerParser.h */,
-				68FCAC6B1D2F152800C0FD5A /* SkyscannerParser.m */,
 				68FCAC131D2F104000C0FD5A /* SkyscannerAgent.h */,
 				68FCAC141D2F104000C0FD5A /* SkyscannerAgent.m */,
 				68FCAC151D2F104000C0FD5A /* SkyscannerBookingDetailsLink.h */,
@@ -308,6 +306,8 @@
 				68FCAC4C1D2F14DF00C0FD5A /* SkyscannerBookingItem.m */,
 				68FCAC4D1D2F14DF00C0FD5A /* SkyscannerBookingOption.h */,
 				68FCAC4E1D2F14DF00C0FD5A /* SkyscannerBookingOption.m */,
+				68FCAC6A1D2F152800C0FD5A /* SkyscannerParser.h */,
+				68FCAC6B1D2F152800C0FD5A /* SkyscannerParser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";

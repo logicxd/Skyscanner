@@ -10,7 +10,7 @@
 
 @implementation HelperClass
 
-+ (NSMutableAttributedString *)addAttributeToAllOccurrences:(NSString *)str target:(NSString *)target option:(NSStringCompareOptions)option withAttributes:(NSDictionary *)attributes{
++ (NSMutableAttributedString *)addAttributesToAllOccurrences:(NSString *)str target:(NSString *)target option:(NSStringCompareOptions)option withAttributes:(NSDictionary *)attributes{
     //Make an attributedString out of the original string.
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:str];
     

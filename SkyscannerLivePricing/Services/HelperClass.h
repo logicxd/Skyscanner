@@ -11,7 +11,7 @@
 
 @interface HelperClass : NSObject
 
-+ (NSMutableAttributedString *)addAttributeToAllOccurrences:(NSString *)str target:(NSString *)target option:(NSStringCompareOptions)option withAttributes:(NSDictionary *)attributes;
++ (NSMutableAttributedString *)addAttributesToAllOccurrences:(NSString *)str target:(NSString *)target option:(NSStringCompareOptions)option withAttributes:(NSDictionary *)attributes;
 
 + (void)runBlock:(void (^)())block afterTimeInSeconds:(CGFloat)seconds;
 

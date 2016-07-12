@@ -12,7 +12,6 @@
 
 @interface SkyscannerBookingOption : NSObject
 
-//@property (nonatomic, strong) NSArray <TripDetailsSegment *> *segmentIDs;
 @property (nonatomic, strong) NSArray <SkyscannerBookingItem *> *bookingItems;
 
 @end
