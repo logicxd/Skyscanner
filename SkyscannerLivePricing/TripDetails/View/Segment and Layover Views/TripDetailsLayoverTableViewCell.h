@@ -11,6 +11,7 @@
 @class TripDetailsInformationView;
 
 @interface TripDetailsLayoverTableViewCell : UITableViewCell
+
 @property (nonatomic, strong) TripDetailsInformationView *layoverView;
-@property (nonatomic, strong) UIView *layoverFlightLine;
+
 @end

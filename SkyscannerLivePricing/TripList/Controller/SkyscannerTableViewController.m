@@ -51,12 +51,13 @@
     
     self.view.delegate = self;
     self.view.dataSource = self;
+    self.title = @"Best prices from SFO to CNX";
     
     SkyscannerNetworking *networkJson = [SkyscannerNetworking sharedNetworking];
     [networkJson postSessionWithOriginPlace:@"sfo-sky"
-                           destinationPlace:@"sna-sky" //SNA, JFK, LAX, SFO, HNL
-                               outboundDate:@"2016-07-25"
-                                inboundDate:@"2016-07-27"
+                           destinationPlace:@"hnl-sky" //SNA, JFK, LAX, SFO, HNL, CNX
+                               outboundDate:@"2016-08-10"
+                                inboundDate:@"2016-08-20"
                                  completion:^(NSString *requestID, NSError *error) {
                                      if (requestID != nil) {
                                          self.requestID = requestID;
@@ -133,7 +134,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *headerLabel = [[UILabel alloc] init];
     headerLabel.backgroundColor = [UIColor colorWithWhite:.90f alpha:1];
-    NSString *headerString = [NSString stringWithFormat:@"%i results shown sorted by Price", self.itineraries.count];
+    NSString *headerString = [NSString stringWithFormat:@"%lu results shown sorted by Price", (unsigned long)self.itineraries.count];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:headerString];
     [attributedString addAttributes:@{
                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:13]
@@ -173,7 +174,7 @@
     } else if (itinerary.outboundLeg.stops.count == 1) {
         outboundNumStops = @"1 stop";
     } else {
-        outboundNumStops = [NSString stringWithFormat:@"%i stops", itinerary.outboundLeg.stops.count];
+        outboundNumStops = [NSString stringWithFormat:@"%lu stops", (unsigned long)itinerary.outboundLeg.stops.count];
     }
     NSString *inboundNumStops;
     if (itinerary.inboundLeg.stops.count == 0) {
@@ -181,7 +182,7 @@
     } else if (itinerary.inboundLeg.stops.count == 1){
         inboundNumStops = @"1 stop";
     } else {
-        inboundNumStops = [NSString stringWithFormat:@"%i stops", itinerary.inboundLeg.stops.count];
+        inboundNumStops = [NSString stringWithFormat:@"%lu stops", (unsigned long)itinerary.inboundLeg.stops.count];
     }
     
     NSInteger outboundDurationInMinutes = itinerary.outboundLeg.duration.integerValue;
@@ -191,9 +192,9 @@
     
     NSString *outboundFlightDuration;
     if (days == 0) {
-        outboundFlightDuration = [NSString stringWithFormat:@"%ih %im", hours, minutes];
+        outboundFlightDuration = [NSString stringWithFormat:@"%lih %lim", (unsigned long)hours, (unsigned long)minutes];
     } else {
-        outboundFlightDuration = [NSString stringWithFormat:@"%id %ih %i", days, hours, minutes];
+        outboundFlightDuration = [NSString stringWithFormat:@"%lid %lih %li", (unsigned long)days, (unsigned long) hours, (unsigned long)minutes];
     }
     
     NSInteger inboundDurationInMinutes = itinerary.inboundLeg.duration.integerValue;
@@ -203,9 +204,9 @@
     
     NSString *inboundFlightDuration;
     if (days == 0) {
-        inboundFlightDuration = [NSString stringWithFormat:@"%ih %im", hours, minutes];
+        inboundFlightDuration = [NSString stringWithFormat:@"%lih %lim", (unsigned long)hours, (unsigned long)minutes];
     } else {
-        inboundFlightDuration = [NSString stringWithFormat:@"%id %ih %im", days, hours, minutes];
+        inboundFlightDuration = [NSString stringWithFormat:@"%lid %lih %lim", (unsigned long)days, (unsigned long)hours, (unsigned long)minutes];
     }
     
     NSDateFormatter *formatter = [NSDateFormatter new];
@@ -252,13 +253,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!self.itineraries) {
+        return;
+    }
+    
     SkyscannerItinerary *itinerary = [self.itineraries objectAtIndex:indexPath.row];
     
     TripDetailsTableViewController *viewController = [[TripDetailsTableViewController alloc] init];
     viewController.requestID = self.requestID;
     viewController.inboundLeg = itinerary.inboundLeg;
     viewController.outboundLeg = itinerary.outboundLeg;
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

@@ -94,7 +94,6 @@
     CGFloat widthOfBoardTimeView = 80.f;
     CGFloat heightOfBoardTimeView = 25.f;
     CGFloat widthOfOriginDestinationView = 130.f;
-    CGFloat heightOfFlightIconView = 110.f;
     CGFloat widthOfFlightIconView = 2;
     
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -145,29 +144,32 @@
     // flightIconView //
     [self.segmentShimmerViews[6] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(20);
-        make.centerY.equalTo(self.contentView);
-        make.height.equalTo(@(heightOfFlightIconView));
+        make.top.equalTo(((UIView *)(self.segmentShimmerViews[7])).mas_bottom);
+        make.bottom.equalTo(((UIView *)(self.segmentShimmerViews[9])).mas_top);
         make.width.equalTo(@(widthOfFlightIconView));
     }];
     
+    //top circle
     [self.segmentShimmerViews[7] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
-        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[6]).mas_top);
+        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_centerY);
         make.width.height.equalTo(@10);
     }];
     
+    //middle circle
     [self.segmentShimmerViews[8] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
-        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[6]).mas_centerY);
+        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_centerY);
         make.width.height.equalTo(@20);
     }];
     
+    //bottom circle
     [self.segmentShimmerViews[9] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
-        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[6]).mas_bottom);
+        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[2]).mas_centerY);
         make.width.height.equalTo(@10);
     }];
-
+    
     [super updateConstraints];
 }
 

@@ -14,10 +14,5 @@
 @property (nonatomic, strong) TripDetailsInformationView *originView;
 @property (nonatomic, strong) TripDetailsInformationView *flightView;
 @property (nonatomic, strong) TripDetailsInformationView *destinationView;
-@property (nonatomic, strong) UIView *flightLine;
-@property (nonatomic, strong) UIView *bottomFlightLine;
-@property (nonatomic, strong) UIView *topCircleView;
-@property (nonatomic, strong) UIImageView *airplaneImage;
-@property (nonatomic, strong) UIView *bottomCircleView;
 
 @end

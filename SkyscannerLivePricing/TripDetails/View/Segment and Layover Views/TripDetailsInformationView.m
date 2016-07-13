@@ -82,39 +82,26 @@
     switch (tripLayout) {
         case TripDetailsInformationViewLayoutDefault:
             [self.timeLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
-            self.timeLabel.text = @"10:00 PM";
-            
             [self.informationLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
-            self.informationLabel.text = @"San Francisco International";
             break;
         case TripDetailsInformationViewLayoutFlight:
             [self.timeLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
             [self.timeLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
-            self.timeLabel.text = @"14h 30m";
-            
             [self.informationLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
             [self.informationLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
-            self.informationLabel.text = @"Philippine Airlines- \nPR115";
-
             break;
         case TripDetailsInformationViewLayoutLongLayover:
             [self.timeLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE weight:-1.0]];
             [self.timeLabel setTextColor:[UIColor redColor]];
-            self.timeLabel.text = @"5h 15m";
-            
             [self.informationLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE weight:-1.0]];
             [self.informationLabel setTextColor:[UIColor redColor]];
-            self.informationLabel.text = @"Connection at airport \nLong connection";
             break;
             
         case TripDetailsInformationViewLayoutShortLayover:
             [self.timeLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
             [self.timeLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
-            self.timeLabel.text = @"1h 15m";
-            
             [self.informationLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
             [self.informationLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
-            self.informationLabel.text = @"Connection at airport \nShort connection";
             break;
         default:
             @throw NSInvalidArgumentException;

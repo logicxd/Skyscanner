@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class SkyscannerTableViewController;
-@class TripDetailsTableViewController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) SkyscannerTableViewController *viewController;
-//@property (strong, nonatomic) TripDetailsTableViewController *viewController;
+@property (strong, nonatomic) UINavigationController *viewController;
+
 @end
 

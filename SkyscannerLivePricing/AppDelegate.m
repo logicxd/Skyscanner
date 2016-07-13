@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "SkyscannerTableViewController.h"
-#import "TripDetailsTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:screenRect];
-    SkyscannerTableViewController *viewController = [[SkyscannerTableViewController alloc] initWithStyle:UITableViewStylePlain];
-//    TripDetailsTableViewController *viewController = [[TripDetailsTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    
-    self.viewController = viewController;
+    SkyscannerTableViewController *skyscannerTableViewController = [[SkyscannerTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.viewController = [[UINavigationController alloc] initWithRootViewController:skyscannerTableViewController];
     [self.window setRootViewController:self.viewController];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];

@@ -14,7 +14,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 //        self.backgroundColor = [UIColor colorWithRed:244.f/255.f green:245.f/255.f blue:241/255.f alpha:1];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
     }
         
     return self;

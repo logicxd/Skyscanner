@@ -21,9 +21,6 @@
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         self.layoverView = [[TripDetailsInformationView alloc] initWithTripLayout:TripDetailsInformationViewLayoutLongLayover];
         [self.contentView addSubview:self.layoverView];
-        
-        self.layoverFlightLine = [[UIView alloc] init];
-        self.layoverFlightLine.backgroundColor = [UIColor lightGrayColor];
     }
 return self;
 }

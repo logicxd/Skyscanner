@@ -10,6 +10,15 @@
 #import "TripDetailsInformationView.h"
 #import "Masonry.h"
 
+@interface TripDetailsSegmentTableViewCell ()
+
+@property (nonatomic, strong) UIView *flightLine;
+@property (nonatomic, strong) UIView *bottomFlightLine;
+@property (nonatomic, strong) UIView *topCircleView;
+@property (nonatomic, strong) UIImageView *airplaneImage;
+@property (nonatomic, strong) UIView *bottomCircleView;
+
+@end
 
 
 @implementation TripDetailsSegmentTableViewCell
@@ -113,8 +122,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.topCircleView.layer.cornerRadius = self.topCircleView.bounds.size.height / 2.f;
-    self.airplaneImage.layer.cornerRadius = self.airplaneImage.bounds.size.height / 2.f;
-    self.bottomCircleView.layer.cornerRadius = self.bottomCircleView.bounds.size.height / 2.f;
+    self.topCircleView.layer.cornerRadius = 14/ 2.f;
+    self.airplaneImage.layer.cornerRadius = 24/ 2.f;
+    self.bottomCircleView.layer.cornerRadius = 14 / 2.f;
+    
+//    self.topCircleView.layer.cornerRadius = self.topCircleView.bounds.size.width / 2.f;
+//    self.airplaneImage.layer.cornerRadius = self.airplaneImage.bounds.size.height / 2.f;
+//    self.bottomCircleView.layer.cornerRadius = self.bottomCircleView.bounds.size.height / 2.f;
 }
 @end

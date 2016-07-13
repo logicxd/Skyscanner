@@ -16,6 +16,7 @@
 @property (readonly) CGFloat fontSizeNumOfStops;
 @property (readonly) CGFloat fontSizeTimeEstimate;
 
+@property (nonatomic) BOOL setConstraints;
 @end
 
 @implementation TwoPlaneFlightTableViewCell
@@ -109,117 +110,121 @@
 }
 
 - (void)updateConstraints {
-    CGFloat lengthOfImageIcon = 20.f;
-    CGSize sizeOfTravelTime = CGSizeMake(160.f, 18.f);
-    CGSize sizeOfDestination = CGSizeMake(170.f, 18.f);
-    CGSize sizeOfNumOfStops = CGSizeMake(80.f, 18.f);
-    CGSize sizeOfTimeEstimate = CGSizeMake(80.f, 18.f);
-    CGSize sizeOfRatingHappy = CGSizeMake(120.f, 16.f);
-    CGSize sizeOfRatingCheap = CGSizeMake(120.f, 16.f);
-    CGSize sizeOfCost = CGSizeMake(120.f, 21.f);
-    CGSize sizeOfFlightProvider = CGSizeMake(120.f, 18.f);
-    
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self).insets(UIEdgeInsetsMake(15.f, 13.f, 15.f, 13.f));
-    }];
-    
-    [self.first_ImageIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(lengthOfImageIcon));
-        make.right.lessThanOrEqualTo(self.first_NumOfStops.mas_left);
-        make.left.equalTo(self.contentView);
-        make.top.equalTo(self.contentView).offset(4.f);
-    }];
-    
-    [self.first_TravelTime mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfTravelTime.width));
-        make.height.equalTo(@(sizeOfTravelTime.height));
-        make.top.equalTo(self.contentView);
-        make.left.equalTo(_first_ImageIcon.mas_right).offset(12.f);
-    }];
-    
-    [self.first_Destination mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfDestination.width));
-        make.height.equalTo(@(sizeOfDestination.height));
-        make.top.equalTo(_first_TravelTime.mas_bottom);
-        make.left.equalTo(_first_TravelTime);
-    }];
-    
-    [self.first_NumOfStops mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfNumOfStops.width));
-        make.height.equalTo(@(sizeOfNumOfStops.height));
-        make.baseline.equalTo(_first_TravelTime.mas_baseline);
-        make.right.equalTo(self.contentView);
-    }];
-    
-    [self.first_TimeEstimate mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfTimeEstimate.width));
-        make.height.equalTo(@(sizeOfTimeEstimate.height));
-        make.baseline.equalTo(_first_Destination);
-        make.right.equalTo(self.contentView);
-    }];
-    
-    [self.second_ImageIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(lengthOfImageIcon));
-        make.left.right.equalTo(self.first_ImageIcon);
-        make.top.equalTo(self.contentView).offset(57);
-    }];
-    
-    [self.second_TravelTime mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfTravelTime.width));
-        make.height.equalTo(@(sizeOfTravelTime.height));
-        make.top.equalTo(_first_Destination.mas_bottom).offset(16.f);
-        make.left.right.equalTo(self.first_TravelTime);
-    }];
-    
-    [self.second_Destination mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfDestination.width));
-        make.height.equalTo(@(sizeOfDestination.height));
-        make.top.equalTo(_second_TravelTime.mas_bottom);
-        make.left.equalTo(_second_TravelTime);
-    }];
-    
-    [self.second_NumOfStops mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfNumOfStops.width));
-        make.height.equalTo(@(sizeOfNumOfStops.height));
-        make.baseline.equalTo(_second_TravelTime.mas_baseline);
-        make.right.equalTo(self.contentView);
-    }];
-    
-    [self.second_TimeEstimate mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfTimeEstimate.width));
-        make.height.equalTo(@(sizeOfTimeEstimate.height));
-        make.baseline.equalTo(_second_Destination);
-        make.right.equalTo(self.contentView);
-    }];
-    
-    [self.ratingHappyness mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfRatingHappy.width));
-        make.height.equalTo(@(sizeOfRatingHappy.height));
-        make.top.equalTo(_second_ImageIcon.mas_bottom).offset(23.f);
-        make.left.equalTo(self.contentView);
-    }];
-    
-    [self.ratingForCheapest mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfRatingCheap.width));
-        make.height.equalTo(@(sizeOfRatingCheap.height));
-        make.top.equalTo(_ratingHappyness.mas_bottom);
-        make.left.equalTo(self.contentView);
-    }];
-    
-    [self.cost mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfCost.width));
-        make.height.equalTo(@(sizeOfCost.height));
-        make.baseline.equalTo(self.ratingHappyness);
-        make.right.equalTo(self.contentView);
-    }];
-    
-    [self.flightProvider mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(sizeOfFlightProvider.width));
-        make.height.equalTo(@(sizeOfFlightProvider.height));
-        make.baseline.equalTo(self.ratingForCheapest);
-        make.right.equalTo(self.contentView);
-    }];
-    
+    if (!self.setConstraints) {
+        self.setConstraints = YES;
+
+        CGFloat lengthOfImageIcon = 20.f;
+        CGSize sizeOfTravelTime = CGSizeMake(160.f, 18.f);
+        CGSize sizeOfDestination = CGSizeMake(170.f, 18.f);
+        CGSize sizeOfNumOfStops = CGSizeMake(80.f, 18.f);
+        CGSize sizeOfTimeEstimate = CGSizeMake(80.f, 18.f);
+        CGSize sizeOfRatingHappy = CGSizeMake(120.f, 16.f);
+        CGSize sizeOfRatingCheap = CGSizeMake(120.f, 16.f);
+        CGSize sizeOfCost = CGSizeMake(120.f, 21.f);
+        CGSize sizeOfFlightProvider = CGSizeMake(120.f, 18.f);
+
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self).insets(UIEdgeInsetsMake(15.f, 13.f, 15.f, 13.f));
+        }];
+
+        [self.first_ImageIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(lengthOfImageIcon));
+            make.right.lessThanOrEqualTo(self.first_NumOfStops.mas_left);
+            make.left.equalTo(self.contentView);
+            make.top.equalTo(self.contentView).offset(4.f);
+        }];
+
+        [self.first_TravelTime mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfTravelTime.width));
+            make.height.equalTo(@(sizeOfTravelTime.height));
+            make.top.equalTo(self.contentView);
+            make.left.equalTo(_first_ImageIcon.mas_right).offset(12.f);
+        }];
+
+        [self.first_Destination mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfDestination.width));
+            make.height.equalTo(@(sizeOfDestination.height));
+            make.top.equalTo(_first_TravelTime.mas_bottom);
+            make.left.equalTo(_first_TravelTime);
+        }];
+
+        [self.first_NumOfStops mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfNumOfStops.width));
+            make.height.equalTo(@(sizeOfNumOfStops.height));
+            make.baseline.equalTo(_first_TravelTime.mas_baseline);
+            make.right.equalTo(self.contentView);
+        }];
+
+        [self.first_TimeEstimate mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfTimeEstimate.width));
+            make.height.equalTo(@(sizeOfTimeEstimate.height));
+            make.baseline.equalTo(_first_Destination);
+            make.right.equalTo(self.contentView);
+        }];
+
+        [self.second_ImageIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(lengthOfImageIcon));
+            make.left.right.equalTo(self.first_ImageIcon);
+            make.top.equalTo(self.contentView).offset(57);
+        }];
+
+        [self.second_TravelTime mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfTravelTime.width));
+            make.height.equalTo(@(sizeOfTravelTime.height));
+            make.top.equalTo(_first_Destination.mas_bottom).offset(16.f);
+            make.left.right.equalTo(self.first_TravelTime);
+        }];
+
+        [self.second_Destination mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfDestination.width));
+            make.height.equalTo(@(sizeOfDestination.height));
+            make.top.equalTo(_second_TravelTime.mas_bottom);
+            make.left.equalTo(_second_TravelTime);
+        }];
+
+        [self.second_NumOfStops mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfNumOfStops.width));
+            make.height.equalTo(@(sizeOfNumOfStops.height));
+            make.baseline.equalTo(_second_TravelTime.mas_baseline);
+            make.right.equalTo(self.contentView);
+        }];
+
+        [self.second_TimeEstimate mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfTimeEstimate.width));
+            make.height.equalTo(@(sizeOfTimeEstimate.height));
+            make.baseline.equalTo(_second_Destination);
+            make.right.equalTo(self.contentView);
+        }];
+
+        [self.ratingHappyness mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfRatingHappy.width));
+            make.height.equalTo(@(sizeOfRatingHappy.height));
+            make.top.equalTo(_second_ImageIcon.mas_bottom).offset(23.f);
+            make.left.equalTo(self.contentView);
+        }];
+
+        [self.ratingForCheapest mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfRatingCheap.width));
+            make.height.equalTo(@(sizeOfRatingCheap.height));
+            make.top.equalTo(_ratingHappyness.mas_bottom);
+            make.left.equalTo(self.contentView);
+        }];
+
+        [self.cost mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfCost.width));
+            make.height.equalTo(@(sizeOfCost.height));
+            make.baseline.equalTo(self.ratingHappyness);
+            make.right.equalTo(self.contentView);
+        }];
+
+        [self.flightProvider mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(sizeOfFlightProvider.width));
+            make.height.equalTo(@(sizeOfFlightProvider.height));
+            make.baseline.equalTo(self.ratingForCheapest);
+            make.right.equalTo(self.contentView);
+        }];
+    }
+
     [super updateConstraints];
 }
 
