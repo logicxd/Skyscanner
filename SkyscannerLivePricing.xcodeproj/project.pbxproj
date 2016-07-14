@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68CB6C351D2F0D530073C800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CB6C341D2F0D530073C800 /* main.m */; };
+		68CB6C381D2F0D530073C800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CB6C371D2F0D530073C800 /* AppDelegate.m */; };
+		68CB6C401D2F0D530073C800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CB6C3F1D2F0D530073C800 /* Assets.xcassets */; };
+		68CB6C4E1D2F0E540073C800 /* SkyShimmerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CB6C4B1D2F0E540073C800 /* SkyShimmerTableViewCell.m */; };
+		68CB6C4F1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CB6C4D1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.m */; };
+		68FCAC0F1D2F0F7100C0FD5A /* SkyscannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC0E1D2F0F7100C0FD5A /* SkyscannerTableViewController.m */; };
+		68FCAC121D2F0FF600C0FD5A /* EmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC111D2F0FF600C0FD5A /* EmptyTableViewCell.m */; };
+		68FCAC1F1D2F104000C0FD5A /* SkyscannerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC141D2F104000C0FD5A /* SkyscannerAgent.m */; };
+		68FCAC201D2F104000C0FD5A /* SkyscannerBookingDetailsLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC161D2F104000C0FD5A /* SkyscannerBookingDetailsLink.m */; };
+		68FCAC211D2F104000C0FD5A /* SkyscannerCarrier.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC181D2F104000C0FD5A /* SkyscannerCarrier.m */; };
+		68FCAC221D2F104000C0FD5A /* SkyscannerCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC1A1D2F104000C0FD5A /* SkyscannerCurrency.m */; };
+		68FCAC231D2F104000C0FD5A /* SkyscannerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC1C1D2F104000C0FD5A /* SkyscannerFactory.m */; };
+		68FCAC241D2F104000C0FD5A /* SkyscannerItinerary.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC1E1D2F104000C0FD5A /* SkyscannerItinerary.m */; };
+		68FCAC331D2F107A00C0FD5A /* SkyscannerLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC261D2F107A00C0FD5A /* SkyscannerLeg.m */; };
+		68FCAC341D2F107A00C0FD5A /* SkyscannerNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC281D2F107A00C0FD5A /* SkyscannerNetworking.m */; };
+		68FCAC351D2F107A00C0FD5A /* SkyscannerPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC2A1D2F107A00C0FD5A /* SkyscannerPlace.m */; };
+		68FCAC361D2F107A00C0FD5A /* SkyscannerPricingOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC2C1D2F107A00C0FD5A /* SkyscannerPricingOption.m */; };
+		68FCAC371D2F107A00C0FD5A /* SkyscannerQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC2E1D2F107A00C0FD5A /* SkyscannerQuery.m */; };
+		68FCAC381D2F107A00C0FD5A /* SkyscannerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC301D2F107A00C0FD5A /* SkyscannerRequest.m */; };
+		68FCAC391D2F107A00C0FD5A /* SkyscannerSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC321D2F107A00C0FD5A /* SkyscannerSegment.m */; };
+		68FCAC3C1D2F10B200C0FD5A /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC3B1D2F10B200C0FD5A /* HelperClass.m */; };
+		68FCAC511D2F14DF00C0FD5A /* Entypo_2708(0)_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FCAC491D2F14DF00C0FD5A /* Entypo_2708(0)_32.png */; };
+		68FCAC521D2F14DF00C0FD5A /* Entypo_2708(0)_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FCAC4A1D2F14DF00C0FD5A /* Entypo_2708(0)_64.png */; };
+		68FCAC531D2F14DF00C0FD5A /* SkyscannerBookingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC4C1D2F14DF00C0FD5A /* SkyscannerBookingItem.m */; };
+		68FCAC541D2F14DF00C0FD5A /* SkyscannerBookingOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC4E1D2F14DF00C0FD5A /* SkyscannerBookingOption.m */; };
+		68FCAC621D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC571D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.m */; };
+		68FCAC631D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC591D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.m */; };
+		68FCAC641D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC5B1D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.m */; };
+		68FCAC651D2F150900C0FD5A /* TripDetailsInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC5D1D2F150900C0FD5A /* TripDetailsInformationView.m */; };
+		68FCAC661D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC5F1D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.m */; };
+		68FCAC671D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC611D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.m */; };
+		68FCAC751D2F152800C0FD5A /* SkyscannerParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC6B1D2F152800C0FD5A /* SkyscannerParser.m */; };
+		68FCAC771D2F152800C0FD5A /* TripDetailsQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC6F1D2F152800C0FD5A /* TripDetailsQuery.m */; };
+		68FCAC781D2F152800C0FD5A /* TripDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC711D2F152800C0FD5A /* TripDetailsRequest.m */; };
+		68FCAC801D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC7B1D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.m */; };
+		68FCAC811D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC7D1D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.m */; };
+		68FCAC821D2F153D00C0FD5A /* TripDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FCAC7F1D2F153D00C0FD5A /* TripDetailsTableViewController.m */; };
+		7B4752AF7CE3D43CF4F5A713 /* libPods-SkyscannerLivePricing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC45461C3EF9F3FA24904E5 /* libPods-SkyscannerLivePricing.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22362840C5D5E2F4A28DD44C /* Pods-SkyscannerLivePricing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyscannerLivePricing.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyscannerLivePricing/Pods-SkyscannerLivePricing.release.xcconfig"; sourceTree = "<group>"; };
+		68CB6C301D2F0D530073C800 /* SkyscannerLivePricing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyscannerLivePricing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68CB6C341D2F0D530073C800 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68CB6C361D2F0D530073C800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		68CB6C371D2F0D530073C800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		68CB6C3F1D2F0D530073C800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68CB6C441D2F0D530073C800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CB6C4A1D2F0E540073C800 /* SkyShimmerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyShimmerTableViewCell.h; sourceTree = "<group>"; };
+		68CB6C4B1D2F0E540073C800 /* SkyShimmerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyShimmerTableViewCell.m; sourceTree = "<group>"; };
+		68CB6C4C1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoPlaneFlightTableViewCell.h; sourceTree = "<group>"; };
+		68CB6C4D1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoPlaneFlightTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC0D1D2F0F7100C0FD5A /* SkyscannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerTableViewController.h; sourceTree = "<group>"; };
+		68FCAC0E1D2F0F7100C0FD5A /* SkyscannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerTableViewController.m; sourceTree = "<group>"; };
+		68FCAC101D2F0FF600C0FD5A /* EmptyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC111D2F0FF600C0FD5A /* EmptyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC131D2F104000C0FD5A /* SkyscannerAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerAgent.h; sourceTree = "<group>"; };
+		68FCAC141D2F104000C0FD5A /* SkyscannerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerAgent.m; sourceTree = "<group>"; };
+		68FCAC151D2F104000C0FD5A /* SkyscannerBookingDetailsLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerBookingDetailsLink.h; sourceTree = "<group>"; };
+		68FCAC161D2F104000C0FD5A /* SkyscannerBookingDetailsLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerBookingDetailsLink.m; sourceTree = "<group>"; };
+		68FCAC171D2F104000C0FD5A /* SkyscannerCarrier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerCarrier.h; sourceTree = "<group>"; };
+		68FCAC181D2F104000C0FD5A /* SkyscannerCarrier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerCarrier.m; sourceTree = "<group>"; };
+		68FCAC191D2F104000C0FD5A /* SkyscannerCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerCurrency.h; sourceTree = "<group>"; };
+		68FCAC1A1D2F104000C0FD5A /* SkyscannerCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerCurrency.m; sourceTree = "<group>"; };
+		68FCAC1B1D2F104000C0FD5A /* SkyscannerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkyscannerFactory.h; path = ../Model/SkyscannerFactory.h; sourceTree = "<group>"; };
+		68FCAC1C1D2F104000C0FD5A /* SkyscannerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkyscannerFactory.m; path = ../Model/SkyscannerFactory.m; sourceTree = "<group>"; };
+		68FCAC1D1D2F104000C0FD5A /* SkyscannerItinerary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerItinerary.h; sourceTree = "<group>"; };
+		68FCAC1E1D2F104000C0FD5A /* SkyscannerItinerary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerItinerary.m; sourceTree = "<group>"; };
+		68FCAC251D2F107A00C0FD5A /* SkyscannerLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerLeg.h; sourceTree = "<group>"; };
+		68FCAC261D2F107A00C0FD5A /* SkyscannerLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerLeg.m; sourceTree = "<group>"; };
+		68FCAC271D2F107A00C0FD5A /* SkyscannerNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerNetworking.h; sourceTree = "<group>"; };
+		68FCAC281D2F107A00C0FD5A /* SkyscannerNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerNetworking.m; sourceTree = "<group>"; };
+		68FCAC291D2F107A00C0FD5A /* SkyscannerPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerPlace.h; sourceTree = "<group>"; };
+		68FCAC2A1D2F107A00C0FD5A /* SkyscannerPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerPlace.m; sourceTree = "<group>"; };
+		68FCAC2B1D2F107A00C0FD5A /* SkyscannerPricingOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerPricingOption.h; sourceTree = "<group>"; };
+		68FCAC2C1D2F107A00C0FD5A /* SkyscannerPricingOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerPricingOption.m; sourceTree = "<group>"; };
+		68FCAC2D1D2F107A00C0FD5A /* SkyscannerQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerQuery.h; sourceTree = "<group>"; };
+		68FCAC2E1D2F107A00C0FD5A /* SkyscannerQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerQuery.m; sourceTree = "<group>"; };
+		68FCAC2F1D2F107A00C0FD5A /* SkyscannerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerRequest.h; sourceTree = "<group>"; };
+		68FCAC301D2F107A00C0FD5A /* SkyscannerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerRequest.m; sourceTree = "<group>"; };
+		68FCAC311D2F107A00C0FD5A /* SkyscannerSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerSegment.h; sourceTree = "<group>"; };
+		68FCAC321D2F107A00C0FD5A /* SkyscannerSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerSegment.m; sourceTree = "<group>"; };
+		68FCAC3A1D2F10B200C0FD5A /* HelperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperClass.h; sourceTree = "<group>"; };
+		68FCAC3B1D2F10B200C0FD5A /* HelperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperClass.m; sourceTree = "<group>"; };
+		68FCAC491D2F14DF00C0FD5A /* Entypo_2708(0)_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_2708(0)_32.png"; sourceTree = "<group>"; };
+		68FCAC4A1D2F14DF00C0FD5A /* Entypo_2708(0)_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_2708(0)_64.png"; sourceTree = "<group>"; };
+		68FCAC4B1D2F14DF00C0FD5A /* SkyscannerBookingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerBookingItem.h; sourceTree = "<group>"; };
+		68FCAC4C1D2F14DF00C0FD5A /* SkyscannerBookingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerBookingItem.m; sourceTree = "<group>"; };
+		68FCAC4D1D2F14DF00C0FD5A /* SkyscannerBookingOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerBookingOption.h; sourceTree = "<group>"; };
+		68FCAC4E1D2F14DF00C0FD5A /* SkyscannerBookingOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerBookingOption.m; sourceTree = "<group>"; };
+		68FCAC561D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsDirectionalityShimmerTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC571D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsDirectionalityShimmerTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC581D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsDirectionTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC591D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsDirectionTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC5A1D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsEmptyTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC5B1D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsEmptyTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC5C1D2F150900C0FD5A /* TripDetailsInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsInformationView.h; sourceTree = "<group>"; };
+		68FCAC5D1D2F150900C0FD5A /* TripDetailsInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsInformationView.m; sourceTree = "<group>"; };
+		68FCAC5E1D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsLayoverShimmerTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC5F1D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsLayoverShimmerTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC601D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsLayoverTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC611D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsLayoverTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC6A1D2F152800C0FD5A /* SkyscannerParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyscannerParser.h; sourceTree = "<group>"; };
+		68FCAC6B1D2F152800C0FD5A /* SkyscannerParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyscannerParser.m; sourceTree = "<group>"; };
+		68FCAC6E1D2F152800C0FD5A /* TripDetailsQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsQuery.h; sourceTree = "<group>"; };
+		68FCAC6F1D2F152800C0FD5A /* TripDetailsQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsQuery.m; sourceTree = "<group>"; };
+		68FCAC701D2F152800C0FD5A /* TripDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsRequest.h; sourceTree = "<group>"; };
+		68FCAC711D2F152800C0FD5A /* TripDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsRequest.m; sourceTree = "<group>"; };
+		68FCAC7A1D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsSegmentShimmerTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC7B1D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsSegmentShimmerTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC7C1D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsSegmentTableViewCell.h; sourceTree = "<group>"; };
+		68FCAC7D1D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsSegmentTableViewCell.m; sourceTree = "<group>"; };
+		68FCAC7E1D2F153D00C0FD5A /* TripDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailsTableViewController.h; sourceTree = "<group>"; };
+		68FCAC7F1D2F153D00C0FD5A /* TripDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailsTableViewController.m; sourceTree = "<group>"; };
+		7BC45461C3EF9F3FA24904E5 /* libPods-SkyscannerLivePricing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkyscannerLivePricing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14DA295FCA73FEEC0A262C /* Pods-SkyscannerLivePricing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyscannerLivePricing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyscannerLivePricing/Pods-SkyscannerLivePricing.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68CB6C2D1D2F0D530073C800 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B4752AF7CE3D43CF4F5A713 /* libPods-SkyscannerLivePricing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05498526036B9044CEB58A24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BC45461C3EF9F3FA24904E5 /* libPods-SkyscannerLivePricing.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A00B2539E23D8F689ED89CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F14DA295FCA73FEEC0A262C /* Pods-SkyscannerLivePricing.debug.xcconfig */,
+				22362840C5D5E2F4A28DD44C /* Pods-SkyscannerLivePricing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68CB6C271D2F0D530073C800 = {
+			isa = PBXGroup;
+			children = (
+				05498526036B9044CEB58A24 /* Frameworks */,
+				2A00B2539E23D8F689ED89CE /* Pods */,
+				68CB6C311D2F0D530073C800 /* Products */,
+				68CB6C321D2F0D530073C800 /* SkyscannerLivePricing */,
+			);
+			sourceTree = "<group>";
+		};
+		68CB6C311D2F0D530073C800 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68CB6C301D2F0D530073C800 /* SkyscannerLivePricing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68CB6C321D2F0D530073C800 /* SkyscannerLivePricing */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC461D2F131800C0FD5A /* Model */,
+				68FCAC3E1D2F121000C0FD5A /* Services */,
+				68CB6C331D2F0D530073C800 /* Supporting Files */,
+				68FCAC431D2F12F800C0FD5A /* TripDetails */,
+				68FCAC3D1D2F11F900C0FD5A /* TripList */,
+				68CB6C361D2F0D530073C800 /* AppDelegate.h */,
+				68CB6C371D2F0D530073C800 /* AppDelegate.m */,
+			);
+			path = SkyscannerLivePricing;
+			sourceTree = "<group>";
+		};
+		68CB6C331D2F0D530073C800 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68CB6C3F1D2F0D530073C800 /* Assets.xcassets */,
+				68CB6C441D2F0D530073C800 /* Info.plist */,
+				68CB6C341D2F0D530073C800 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68FCAC3D1D2F11F900C0FD5A /* TripList */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC3F1D2F121E00C0FD5A /* Controller */,
+				68FCAC401D2F122800C0FD5A /* View */,
+			);
+			path = TripList;
+			sourceTree = "<group>";
+		};
+		68FCAC3E1D2F121000C0FD5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC1B1D2F104000C0FD5A /* SkyscannerFactory.h */,
+				68FCAC1C1D2F104000C0FD5A /* SkyscannerFactory.m */,
+				68FCAC3A1D2F10B200C0FD5A /* HelperClass.h */,
+				68FCAC3B1D2F10B200C0FD5A /* HelperClass.m */,
+				68FCAC271D2F107A00C0FD5A /* SkyscannerNetworking.h */,
+				68FCAC281D2F107A00C0FD5A /* SkyscannerNetworking.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		68FCAC3F1D2F121E00C0FD5A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC0D1D2F0F7100C0FD5A /* SkyscannerTableViewController.h */,
+				68FCAC0E1D2F0F7100C0FD5A /* SkyscannerTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		68FCAC401D2F122800C0FD5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC101D2F0FF600C0FD5A /* EmptyTableViewCell.h */,
+				68FCAC111D2F0FF600C0FD5A /* EmptyTableViewCell.m */,
+				68CB6C4A1D2F0E540073C800 /* SkyShimmerTableViewCell.h */,
+				68CB6C4B1D2F0E540073C800 /* SkyShimmerTableViewCell.m */,
+				68CB6C4C1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.h */,
+				68CB6C4D1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68FCAC431D2F12F800C0FD5A /* TripDetails */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC441D2F130600C0FD5A /* Controller */,
+				68FCAC451D2F131300C0FD5A /* View */,
+			);
+			path = TripDetails;
+			sourceTree = "<group>";
+		};
+		68FCAC441D2F130600C0FD5A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC7E1D2F153D00C0FD5A /* TripDetailsTableViewController.h */,
+				68FCAC7F1D2F153D00C0FD5A /* TripDetailsTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		68FCAC451D2F131300C0FD5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC831D2F18A500C0FD5A /* Segment and Layover Views */,
+				68FCAC841D2F18D600C0FD5A /* Shimmering */,
+				68FCAC581D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.h */,
+				68FCAC591D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.m */,
+				68FCAC5A1D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.h */,
+				68FCAC5B1D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68FCAC461D2F131800C0FD5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC491D2F14DF00C0FD5A /* Entypo_2708(0)_32.png */,
+				68FCAC4A1D2F14DF00C0FD5A /* Entypo_2708(0)_64.png */,
+				68FCAC6A1D2F152800C0FD5A /* SkyscannerParser.h */,
+				68FCAC6B1D2F152800C0FD5A /* SkyscannerParser.m */,
+				68FCAC131D2F104000C0FD5A /* SkyscannerAgent.h */,
+				68FCAC141D2F104000C0FD5A /* SkyscannerAgent.m */,
+				68FCAC151D2F104000C0FD5A /* SkyscannerBookingDetailsLink.h */,
+				68FCAC161D2F104000C0FD5A /* SkyscannerBookingDetailsLink.m */,
+				68FCAC171D2F104000C0FD5A /* SkyscannerCarrier.h */,
+				68FCAC181D2F104000C0FD5A /* SkyscannerCarrier.m */,
+				68FCAC191D2F104000C0FD5A /* SkyscannerCurrency.h */,
+				68FCAC1A1D2F104000C0FD5A /* SkyscannerCurrency.m */,
+				68FCAC1D1D2F104000C0FD5A /* SkyscannerItinerary.h */,
+				68FCAC1E1D2F104000C0FD5A /* SkyscannerItinerary.m */,
+				68FCAC251D2F107A00C0FD5A /* SkyscannerLeg.h */,
+				68FCAC261D2F107A00C0FD5A /* SkyscannerLeg.m */,
+				68FCAC291D2F107A00C0FD5A /* SkyscannerPlace.h */,
+				68FCAC2A1D2F107A00C0FD5A /* SkyscannerPlace.m */,
+				68FCAC2B1D2F107A00C0FD5A /* SkyscannerPricingOption.h */,
+				68FCAC2C1D2F107A00C0FD5A /* SkyscannerPricingOption.m */,
+				68FCAC2D1D2F107A00C0FD5A /* SkyscannerQuery.h */,
+				68FCAC2E1D2F107A00C0FD5A /* SkyscannerQuery.m */,
+				68FCAC2F1D2F107A00C0FD5A /* SkyscannerRequest.h */,
+				68FCAC301D2F107A00C0FD5A /* SkyscannerRequest.m */,
+				68FCAC311D2F107A00C0FD5A /* SkyscannerSegment.h */,
+				68FCAC321D2F107A00C0FD5A /* SkyscannerSegment.m */,
+				68FCAC701D2F152800C0FD5A /* TripDetailsRequest.h */,
+				68FCAC711D2F152800C0FD5A /* TripDetailsRequest.m */,
+				68FCAC6E1D2F152800C0FD5A /* TripDetailsQuery.h */,
+				68FCAC6F1D2F152800C0FD5A /* TripDetailsQuery.m */,
+				68FCAC4B1D2F14DF00C0FD5A /* SkyscannerBookingItem.h */,
+				68FCAC4C1D2F14DF00C0FD5A /* SkyscannerBookingItem.m */,
+				68FCAC4D1D2F14DF00C0FD5A /* SkyscannerBookingOption.h */,
+				68FCAC4E1D2F14DF00C0FD5A /* SkyscannerBookingOption.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68FCAC831D2F18A500C0FD5A /* Segment and Layover Views */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC5C1D2F150900C0FD5A /* TripDetailsInformationView.h */,
+				68FCAC5D1D2F150900C0FD5A /* TripDetailsInformationView.m */,
+				68FCAC601D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.h */,
+				68FCAC611D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.m */,
+				68FCAC7C1D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.h */,
+				68FCAC7D1D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.m */,
+			);
+			path = "Segment and Layover Views";
+			sourceTree = "<group>";
+		};
+		68FCAC841D2F18D600C0FD5A /* Shimmering */ = {
+			isa = PBXGroup;
+			children = (
+				68FCAC561D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.h */,
+				68FCAC571D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.m */,
+				68FCAC5E1D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.h */,
+				68FCAC5F1D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.m */,
+				68FCAC7A1D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.h */,
+				68FCAC7B1D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.m */,
+			);
+			path = Shimmering;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68CB6C2F1D2F0D530073C800 /* SkyscannerLivePricing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68CB6C471D2F0D530073C800 /* Build configuration list for PBXNativeTarget "SkyscannerLivePricing" */;
+			buildPhases = (
+				99BA30246B9A79727AB5DA72 /* [CP] Check Pods Manifest.lock */,
+				68CB6C2C1D2F0D530073C800 /* Sources */,
+				68CB6C2D1D2F0D530073C800 /* Frameworks */,
+				68CB6C2E1D2F0D530073C800 /* Resources */,
+				DE3D03C9E7A02A63D66032EC /* [CP] Embed Pods Frameworks */,
+				2F5C298E699F8F6EDC0B2DE5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyscannerLivePricing;
+			productName = SkyscannerLivePricing;
+			productReference = 68CB6C301D2F0D530073C800 /* SkyscannerLivePricing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68CB6C281D2F0D530073C800 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Aung Moe";
+				TargetAttributes = {
+					68CB6C2F1D2F0D530073C800 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8965JJK585;
+					};
+				};
+			};
+			buildConfigurationList = 68CB6C2B1D2F0D530073C800 /* Build configuration list for PBXProject "SkyscannerLivePricing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68CB6C271D2F0D530073C800;
+			productRefGroup = 68CB6C311D2F0D530073C800 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68CB6C2F1D2F0D530073C800 /* SkyscannerLivePricing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68CB6C2E1D2F0D530073C800 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68FCAC511D2F14DF00C0FD5A /* Entypo_2708(0)_32.png in Resources */,
+				68CB6C401D2F0D530073C800 /* Assets.xcassets in Resources */,
+				68FCAC521D2F14DF00C0FD5A /* Entypo_2708(0)_64.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F5C298E699F8F6EDC0B2DE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyscannerLivePricing/Pods-SkyscannerLivePricing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99BA30246B9A79727AB5DA72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE3D03C9E7A02A63D66032EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyscannerLivePricing/Pods-SkyscannerLivePricing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68CB6C2C1D2F0D530073C800 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68FCAC541D2F14DF00C0FD5A /* SkyscannerBookingOption.m in Sources */,
+				68FCAC241D2F104000C0FD5A /* SkyscannerItinerary.m in Sources */,
+				68FCAC661D2F150900C0FD5A /* TripDetailsLayoverShimmerTableViewCell.m in Sources */,
+				68FCAC801D2F153D00C0FD5A /* TripDetailsSegmentShimmerTableViewCell.m in Sources */,
+				68FCAC0F1D2F0F7100C0FD5A /* SkyscannerTableViewController.m in Sources */,
+				68FCAC351D2F107A00C0FD5A /* SkyscannerPlace.m in Sources */,
+				68FCAC751D2F152800C0FD5A /* SkyscannerParser.m in Sources */,
+				68FCAC221D2F104000C0FD5A /* SkyscannerCurrency.m in Sources */,
+				68FCAC371D2F107A00C0FD5A /* SkyscannerQuery.m in Sources */,
+				68FCAC631D2F150900C0FD5A /* TripDetailsDirectionTableViewCell.m in Sources */,
+				68FCAC771D2F152800C0FD5A /* TripDetailsQuery.m in Sources */,
+				68FCAC531D2F14DF00C0FD5A /* SkyscannerBookingItem.m in Sources */,
+				68FCAC821D2F153D00C0FD5A /* TripDetailsTableViewController.m in Sources */,
+				68FCAC651D2F150900C0FD5A /* TripDetailsInformationView.m in Sources */,
+				68FCAC391D2F107A00C0FD5A /* SkyscannerSegment.m in Sources */,
+				68FCAC641D2F150900C0FD5A /* TripDetailsEmptyTableViewCell.m in Sources */,
+				68FCAC361D2F107A00C0FD5A /* SkyscannerPricingOption.m in Sources */,
+				68FCAC381D2F107A00C0FD5A /* SkyscannerRequest.m in Sources */,
+				68CB6C381D2F0D530073C800 /* AppDelegate.m in Sources */,
+				68FCAC621D2F150900C0FD5A /* TripDetailsDirectionalityShimmerTableViewCell.m in Sources */,
+				68FCAC781D2F152800C0FD5A /* TripDetailsRequest.m in Sources */,
+				68FCAC3C1D2F10B200C0FD5A /* HelperClass.m in Sources */,
+				68FCAC341D2F107A00C0FD5A /* SkyscannerNetworking.m in Sources */,
+				68FCAC211D2F104000C0FD5A /* SkyscannerCarrier.m in Sources */,
+				68FCAC121D2F0FF600C0FD5A /* EmptyTableViewCell.m in Sources */,
+				68FCAC1F1D2F104000C0FD5A /* SkyscannerAgent.m in Sources */,
+				68FCAC231D2F104000C0FD5A /* SkyscannerFactory.m in Sources */,
+				68FCAC671D2F150900C0FD5A /* TripDetailsLayoverTableViewCell.m in Sources */,
+				68CB6C351D2F0D530073C800 /* main.m in Sources */,
+				68CB6C4F1D2F0E540073C800 /* TwoPlaneFlightTableViewCell.m in Sources */,
+				68FCAC811D2F153D00C0FD5A /* TripDetailsSegmentTableViewCell.m in Sources */,
+				68CB6C4E1D2F0E540073C800 /* SkyShimmerTableViewCell.m in Sources */,
+				68FCAC201D2F104000C0FD5A /* SkyscannerBookingDetailsLink.m in Sources */,
+				68FCAC331D2F107A00C0FD5A /* SkyscannerLeg.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		68CB6C451D2F0D530073C800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		68CB6C461D2F0D530073C800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68CB6C481D2F0D530073C800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F14DA295FCA73FEEC0A262C /* Pods-SkyscannerLivePricing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "SkyscannerLivePricing/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alaric.SkyscannerLivePricing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		68CB6C491D2F0D530073C800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22362840C5D5E2F4A28DD44C /* Pods-SkyscannerLivePricing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "SkyscannerLivePricing/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alaric.SkyscannerLivePricing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68CB6C2B1D2F0D530073C800 /* Build configuration list for PBXProject "SkyscannerLivePricing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68CB6C451D2F0D530073C800 /* Debug */,
+				68CB6C461D2F0D530073C800 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68CB6C471D2F0D530073C800 /* Build configuration list for PBXNativeTarget "SkyscannerLivePricing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68CB6C481D2F0D530073C800 /* Debug */,
+				68CB6C491D2F0D530073C800 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68CB6C281D2F0D530073C800 /* Project object */;
+}
