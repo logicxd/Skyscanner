@@ -11,6 +11,9 @@
 #import "Masonry.h"
 
 @interface TripDetailsLayoverTableViewCell()
+
+@property (nonatomic) BOOL setConstraints;
+
 @end
 @implementation TripDetailsLayoverTableViewCell
 
@@ -30,16 +33,20 @@ return self;
 }
 
 - (void)updateConstraints {
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    
-    [self.layoverView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView.mas_left).offset(45.f);
-        make.right.equalTo(self.contentView).offset(-10);
-        make.centerY.equalTo(self.contentView);
-        make.height.equalTo(self.layoverView.informationLabel);
-    }];
+    if (!self.setConstraints) {
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self);
+        }];
+        
+        [self.layoverView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).offset(45.f);
+            make.right.equalTo(self.contentView).offset(-10);
+            make.centerY.equalTo(self.contentView);
+            make.height.equalTo(self.layoverView.informationLabel);
+        }];
+        
+        self.setConstraints = YES;
+    }
     [super updateConstraints];
 }
 

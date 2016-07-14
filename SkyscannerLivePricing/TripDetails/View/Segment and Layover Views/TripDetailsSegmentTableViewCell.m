@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIImageView *airplaneImage;
 @property (nonatomic, strong) UIView *bottomCircleView;
 
+@property (nonatomic) BOOL setConstraints;
+
 @end
 
 
@@ -71,51 +73,53 @@
 }
 
 - (void)updateConstraints {
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    
-    [self.originView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView.mas_left).offset(45.f);
-        make.right.equalTo(self.contentView).offset(-10);
-        make.top.equalTo(self.contentView);
-        make.height.equalTo(self.originView.informationLabel);
-    }];
-    [self.flightView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(self.flightView.informationLabel);
-        make.width.equalTo(self.originView);
-        make.centerY.equalTo(self.contentView);
-        make.left.equalTo(self.originView.mas_left);
-    }];
-    [self.destinationView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView);
-        make.height.equalTo(self.destinationView.informationLabel);
-        make.width.equalTo(self.flightView);
-        make.left.equalTo(self.flightView.mas_left);
-    }];
-    
-    [self.flightLine mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(20);
-        make.width.equalTo(@2.5f);
-        make.top.equalTo(self.topCircleView.mas_bottom);
-        make.bottom.equalTo(self.bottomCircleView.mas_top);
-    }];
-    [self.topCircleView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.flightLine);
-        make.centerY.equalTo(self.originView);
-        make.width.height.equalTo(@14);
-    }];
-    [self.airplaneImage mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.flightLine);
-        make.centerY.equalTo(self.flightView);
-        make.width.height.equalTo(@24);
-    }];
-    [self.bottomCircleView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.flightLine);
-        make.centerY.equalTo(self.destinationView);
-        make.width.height.equalTo(@14);
-    }];
-    
+    if (!self.setConstraints) {
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self);
+        }];
+        
+        [self.originView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).offset(45.f);
+            make.right.equalTo(self.contentView).offset(-10);
+            make.top.equalTo(self.contentView);
+            make.height.equalTo(self.originView.informationLabel);
+        }];
+        [self.flightView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(self.flightView.informationLabel);
+            make.width.equalTo(self.originView);
+            make.centerY.equalTo(self.contentView);
+            make.left.equalTo(self.originView.mas_left);
+        }];
+        [self.destinationView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.contentView);
+            make.height.equalTo(self.destinationView.informationLabel);
+            make.width.equalTo(self.flightView);
+            make.left.equalTo(self.flightView.mas_left);
+        }];
+        
+        [self.flightLine mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(20);
+            make.width.equalTo(@2.5f);
+            make.top.equalTo(self.topCircleView.mas_bottom);
+            make.bottom.equalTo(self.bottomCircleView.mas_top);
+        }];
+        [self.topCircleView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.flightLine);
+            make.centerY.equalTo(self.originView);
+            make.width.height.equalTo(@14);
+        }];
+        [self.airplaneImage mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.flightLine);
+            make.centerY.equalTo(self.flightView);
+            make.width.height.equalTo(@24);
+        }];
+        [self.bottomCircleView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.flightLine);
+            make.centerY.equalTo(self.destinationView);
+            make.width.height.equalTo(@14);
+        }];
+        self.setConstraints = YES;
+    }
     [super updateConstraints];
 }
 

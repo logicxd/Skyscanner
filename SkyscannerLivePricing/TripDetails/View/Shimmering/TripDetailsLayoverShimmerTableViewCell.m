@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIView *layoverTimeView;
 @property (nonatomic, strong) UIView *layoverStatusView;
 
+@property (nonatomic) BOOL setConstraints;
 @end
 
 @implementation TripDetailsLayoverShimmerTableViewCell
@@ -54,30 +55,33 @@
 }
 
 - (void)updateConstraints {
-    CGFloat heightOfLayoverTimeView = 25.f;
-    CGFloat widthOfLayoverTimeView = 80.f;
-    CGFloat widthOfOriginDestinationView = 130.f;
-
-    
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    
-    //  layoverTimeView
-    [self.layoverShimmerViews[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10.f);
-        make.width.equalTo(@(widthOfLayoverTimeView));
-        make.height.equalTo(@(heightOfLayoverTimeView));
-        make.right.equalTo(((UIView *)self.contentView).mas_centerX).offset(-35.f);
-    }];
-    
-    // layoverStatusView //
-    [self.layoverShimmerViews[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(((UIView *)self.layoverShimmerViews[0]).mas_right).offset(25.f);
-        make.baseline.top.equalTo(self.layoverShimmerViews[0]);
-        make.width.equalTo(@(widthOfOriginDestinationView));
-    }];
-    
+    if (!self.setConstraints) {
+        CGFloat heightOfLayoverTimeView = 25.f;
+        CGFloat widthOfLayoverTimeView = 80.f;
+        CGFloat widthOfOriginDestinationView = 130.f;
+        
+        
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self);
+        }];
+        
+        //  layoverTimeView
+        [self.layoverShimmerViews[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView).offset(10.f);
+            make.width.equalTo(@(widthOfLayoverTimeView));
+            make.height.equalTo(@(heightOfLayoverTimeView));
+            make.right.equalTo(((UIView *)self.contentView).mas_centerX).offset(-35.f);
+        }];
+        
+        // layoverStatusView //
+        [self.layoverShimmerViews[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(((UIView *)self.layoverShimmerViews[0]).mas_right).offset(25.f);
+            make.baseline.top.equalTo(self.layoverShimmerViews[0]);
+            make.width.equalTo(@(widthOfOriginDestinationView));
+        }];
+        
+        self.setConstraints = YES;
+    }
     [super updateConstraints];
 }
 

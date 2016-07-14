@@ -22,6 +22,9 @@
 @property (nonatomic, strong) UIView *topCircleView;
 @property (nonatomic, strong) UIView *middleCircleView;
 @property (nonatomic, strong) UIView *bottomCircleView;
+
+@property (nonatomic) BOOL setConstraints;
+
 @end
 
 @implementation TripDetailsSegmentShimmerTableViewCell
@@ -91,85 +94,88 @@
 }
 
 - (void)updateConstraints {
-    CGFloat widthOfBoardTimeView = 80.f;
-    CGFloat heightOfBoardTimeView = 25.f;
-    CGFloat widthOfOriginDestinationView = 130.f;
-    CGFloat widthOfFlightIconView = 2;
-    
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    
-    // boardTimeView //
-    [self.segmentShimmerViews[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10.f);
-        make.height.equalTo(@(heightOfBoardTimeView));
-        make.width.equalTo(@(widthOfBoardTimeView));
-        make.right.equalTo(((UIView *)self.contentView).mas_centerX).offset(-35.f);
-    }];
-    
-    // durationTimeView //
-    [self.segmentShimmerViews[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_bottom).offset(15.f);
-        make.width.height.left.equalTo(self.segmentShimmerViews[0]);
-    }];
-    
-    // departTimeView //
-    [self.segmentShimmerViews[2] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_bottom).offset(15.f);
-        make.width.height.left.equalTo(self.segmentShimmerViews[1]);
-    }];
-    
-    // originDestinationView //
-    [self.segmentShimmerViews[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_right).offset(25.f);
-        make.baseline.top.equalTo(self.segmentShimmerViews[0]);
-        make.width.equalTo(@(widthOfOriginDestinationView));
-    }];
-
-    // flightCarrierView //
-    [self.segmentShimmerViews[4] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_right).offset(25.f);
-        make.baseline.top.equalTo(self.segmentShimmerViews[1]);
-        make.width.equalTo(self.segmentShimmerViews[3]);
-    }];
-    
-    // arrivalDestinationView //
-    [self.segmentShimmerViews[5] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(((UIView *)self.segmentShimmerViews[2]).mas_right).offset(25.f);
-        make.baseline.top.equalTo(self.segmentShimmerViews[2]);
-        make.width.equalTo(self.segmentShimmerViews[4]);
-    }];
-
-    // flightIconView //
-    [self.segmentShimmerViews[6] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(20);
-        make.top.equalTo(((UIView *)(self.segmentShimmerViews[7])).mas_bottom);
-        make.bottom.equalTo(((UIView *)(self.segmentShimmerViews[9])).mas_top);
-        make.width.equalTo(@(widthOfFlightIconView));
-    }];
-    
-    //top circle
-    [self.segmentShimmerViews[7] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
-        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_centerY);
-        make.width.height.equalTo(@10);
-    }];
-    
-    //middle circle
-    [self.segmentShimmerViews[8] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
-        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_centerY);
-        make.width.height.equalTo(@20);
-    }];
-    
-    //bottom circle
-    [self.segmentShimmerViews[9] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
-        make.centerY.equalTo(((UIView *)self.segmentShimmerViews[2]).mas_centerY);
-        make.width.height.equalTo(@10);
-    }];
-    
+    if (!self.setConstraints) {
+        CGFloat widthOfBoardTimeView = 80.f;
+        CGFloat heightOfBoardTimeView = 25.f;
+        CGFloat widthOfOriginDestinationView = 130.f;
+        CGFloat widthOfFlightIconView = 2;
+        
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self);
+        }];
+        
+        // boardTimeView //
+        [self.segmentShimmerViews[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView).offset(10.f);
+            make.height.equalTo(@(heightOfBoardTimeView));
+            make.width.equalTo(@(widthOfBoardTimeView));
+            make.right.equalTo(((UIView *)self.contentView).mas_centerX).offset(-35.f);
+        }];
+        
+        // durationTimeView //
+        [self.segmentShimmerViews[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_bottom).offset(15.f);
+            make.width.height.left.equalTo(self.segmentShimmerViews[0]);
+        }];
+        
+        // departTimeView //
+        [self.segmentShimmerViews[2] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_bottom).offset(15.f);
+            make.width.height.left.equalTo(self.segmentShimmerViews[1]);
+        }];
+        
+        // originDestinationView //
+        [self.segmentShimmerViews[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_right).offset(25.f);
+            make.baseline.top.equalTo(self.segmentShimmerViews[0]);
+            make.width.equalTo(@(widthOfOriginDestinationView));
+        }];
+        
+        // flightCarrierView //
+        [self.segmentShimmerViews[4] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_right).offset(25.f);
+            make.baseline.top.equalTo(self.segmentShimmerViews[1]);
+            make.width.equalTo(self.segmentShimmerViews[3]);
+        }];
+        
+        // arrivalDestinationView //
+        [self.segmentShimmerViews[5] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(((UIView *)self.segmentShimmerViews[2]).mas_right).offset(25.f);
+            make.baseline.top.equalTo(self.segmentShimmerViews[2]);
+            make.width.equalTo(self.segmentShimmerViews[4]);
+        }];
+        
+        // flightIconView //
+        [self.segmentShimmerViews[6] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(20);
+            make.top.equalTo(((UIView *)(self.segmentShimmerViews[7])).mas_bottom);
+            make.bottom.equalTo(((UIView *)(self.segmentShimmerViews[9])).mas_top);
+            make.width.equalTo(@(widthOfFlightIconView));
+        }];
+        
+        //top circle
+        [self.segmentShimmerViews[7] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
+            make.centerY.equalTo(((UIView *)self.segmentShimmerViews[0]).mas_centerY);
+            make.width.height.equalTo(@10);
+        }];
+        
+        //middle circle
+        [self.segmentShimmerViews[8] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
+            make.centerY.equalTo(((UIView *)self.segmentShimmerViews[1]).mas_centerY);
+            make.width.height.equalTo(@20);
+        }];
+        
+        //bottom circle
+        [self.segmentShimmerViews[9] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(((UIView *)self.segmentShimmerViews[6]));
+            make.centerY.equalTo(((UIView *)self.segmentShimmerViews[2]).mas_centerY);
+            make.width.height.equalTo(@10);
+        }];
+        
+        self.setConstraints = YES;
+    }
     [super updateConstraints];
 }
 

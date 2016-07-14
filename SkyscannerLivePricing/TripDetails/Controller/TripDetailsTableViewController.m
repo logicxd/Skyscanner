@@ -105,7 +105,7 @@
                                                   itineraryKey:itineraryKey
                                                     completion:^(NSDictionary *JSON, NSError *error) {
                                                         NSLog(@"   BookingDetails Updating...");
-                                                        if (JSON) {
+                                                        if (!JSON) {
                                                             self.request = [SkyscannerParser parseTripDetailsJSON:JSON];
                                                             [self fetchData];
                                                             [self.view reloadData];

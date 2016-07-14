@@ -9,6 +9,12 @@
 #import "TripDetailsInformationView.h"
 #import "Masonry.h"
 
+@interface TripDetailsInformationView ()
+
+@property (nonatomic) BOOL setConstraints;
+
+@end
+
 @implementation TripDetailsInformationView
 
 #pragma mark - Inits
@@ -53,22 +59,25 @@
 }
 
 -(void)updateConstraints {
-    
-    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-        // Without this, there's an annoying error. //
-    }];
-    
-    [self.timeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.informationLabel);
-        make.left.equalTo(self);
-        make.width.equalTo(@105);
-    }];
-    
-    [self.informationLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.timeLabel.mas_right);
-        make.right.lessThanOrEqualTo(self.mas_right);
-        make.top.equalTo(self);
-    }];
+    if (!self.setConstraints) {
+        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+            // Without this, there's an annoying error. //
+        }];
+        
+        [self.timeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.informationLabel);
+            make.left.equalTo(self);
+            make.width.equalTo(@105);
+        }];
+        
+        [self.informationLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.timeLabel.mas_right);
+            make.right.lessThanOrEqualTo(self.mas_right);
+            make.top.equalTo(self);
+        }];
+        
+        self.setConstraints = YES;
+    }
     
     [super updateConstraints];
 }

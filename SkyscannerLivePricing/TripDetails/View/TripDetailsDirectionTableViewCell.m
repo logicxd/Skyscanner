@@ -9,6 +9,12 @@
 #import "TripDetailsDirectionTableViewCell.h"
 #import "Masonry.h"
 
+@interface TripDetailsDirectionTableViewCell  ()
+
+@property (nonatomic) BOOL setConstraints;
+
+@end
+
 @implementation TripDetailsDirectionTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -37,25 +43,26 @@
 }
 
 - (void)updateConstraints {
-    const CGFloat INSET_FONT_SIZE = 10.f;
-    
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self).insets(UIEdgeInsetsMake(14.f, INSET_FONT_SIZE, 14.f, INSET_FONT_SIZE));
-    }];
-    
-    [self.directionalityLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView);
-        make.left.equalTo(self.contentView);
-        make.right.equalTo(self.contentView);
-    }];
-    
-    [self.timeAndStopLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.directionalityLabel.mas_bottom);
-        make.left.equalTo(self.directionalityLabel);
-        make.right.equalTo(self.directionalityLabel);
-        make.height.equalTo(self.directionalityLabel);
-    }];
-    
+    if (!self.setConstraints) {
+        const CGFloat INSET_SIZE = 12.f;
+        
+        [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self).insets(UIEdgeInsetsMake(14.f, INSET_SIZE, 14.f, INSET_SIZE));
+        }];
+        
+        [self.directionalityLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView);
+            make.left.equalTo(self.contentView);
+            make.right.equalTo(self.contentView);
+        }];
+        
+        [self.timeAndStopLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.directionalityLabel.mas_bottom);
+            make.left.equalTo(self.directionalityLabel);
+            make.right.equalTo(self.directionalityLabel);
+        }];
+        self.setConstraints = YES;
+    }
     [super updateConstraints];
 }
 
