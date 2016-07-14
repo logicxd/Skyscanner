@@ -55,7 +55,7 @@
     
     SkyscannerNetworking *networkJson = [SkyscannerNetworking sharedNetworking];
     [networkJson postSessionWithOriginPlace:@"sfo-sky"
-                           destinationPlace:@"hnl-sky" //SNA, JFK, LAX, SFO, HNL, CNX
+                           destinationPlace:@"cnx-sky" //SNA, JFK, LAX, SFO, HNL, CNX
                                outboundDate:@"2016-08-10"
                                 inboundDate:@"2016-08-20"
                                  completion:^(NSString *requestID, NSError *error) {
@@ -194,7 +194,7 @@
     if (days == 0) {
         outboundFlightDuration = [NSString stringWithFormat:@"%lih %lim", (unsigned long)hours, (unsigned long)minutes];
     } else {
-        outboundFlightDuration = [NSString stringWithFormat:@"%lid %lih %li", (unsigned long)days, (unsigned long) hours, (unsigned long)minutes];
+        outboundFlightDuration = [NSString stringWithFormat:@"%lid %lih %lim", (unsigned long)days, (unsigned long) hours, (unsigned long)minutes];
     }
     
     NSInteger inboundDurationInMinutes = itinerary.inboundLeg.duration.integerValue;

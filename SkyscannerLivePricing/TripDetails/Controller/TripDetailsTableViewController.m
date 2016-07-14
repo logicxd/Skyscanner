@@ -15,10 +15,12 @@
 #import "TripDetailsLayoverTableViewCell.h"
 #import "TripDetailsDirectionTableViewCell.h"
 #import "TripDetailsQuery.h"
+#import "TripDetailsRequest.h"
 #import "SkyscannerPlace.h"
 #import "SkyscannerNetworking.h"
 #import "SkyscannerLeg.h"
-#import "TripDetailsRequest.h"
+#import "SkyscannerBookingItem.h"
+#import "SkyscannerBookingOption.h"
 #import "SkyscannerParser.h"
 #import "SkyscannerSegment.h"
 #import "SkyscannerCarrier.h"
@@ -67,13 +69,13 @@
         [network getRequestForBookingDetailsWithSessionKey:self.requestID
                                               itineraryKey:itineraryKey
                                                 completion:^(NSDictionary *JSON, NSError *error) {
-                                                  
                                                     NSLog(@"GETRequestForBookingDetails is success");
                                                     
-                                                    if (!JSON) {
+                                                    if (JSON) {
                                                         self.request = [SkyscannerParser parseTripDetailsJSON:JSON];
                                                         [self fetchData];
                                                         [self.view reloadData];
+                                                        [self updateJSONUntilAllCompleteWithItineraryKey:itineraryKey];
                                                     }
                                                   
                                                 }];
@@ -83,6 +85,39 @@
                                         outboundLegID:self.outboundLeg.legID
                                          inboundLegID:self.inboundLeg.legID
                                            completion:putRequestBlock];
+}
+
+- (void)updateJSONUntilAllCompleteWithItineraryKey:(NSString *)itineraryKey {
+    BOOL needsToUpdate = NO;
+    for (SkyscannerBookingOption *bookingOption in self.request.bookingOptions) {
+        for (SkyscannerBookingItem *bookingItem in bookingOption.bookingItems) {
+            if (![bookingItem.status isEqualToString:@"Current"]) {
+                needsToUpdate = YES;
+                break;
+            }
+        }
+    }
+    
+    if (needsToUpdate) {
+        [HelperClass runBlock:^{
+            SkyscannerNetworking *network = [SkyscannerNetworking sharedNetworking];
+            [network getRequestForBookingDetailsWithSessionKey:self.requestID
+                                                  itineraryKey:itineraryKey
+                                                    completion:^(NSDictionary *JSON, NSError *error) {
+                                                        NSLog(@"   BookingDetails Updating...");
+                                                        if (JSON) {
+                                                            self.request = [SkyscannerParser parseTripDetailsJSON:JSON];
+                                                            [self fetchData];
+                                                            [self.view reloadData];
+                                                            [self updateJSONUntilAllCompleteWithItineraryKey:itineraryKey];
+                                                        } else {
+                                                            [self updateJSONUntilAllCompleteWithItineraryKey:itineraryKey];
+                                                        }
+                                                    }];
+        } afterTimeInSeconds:5.0f];
+    } else {
+        NSLog(@"   BookingDetails Update Complete.");
+    }
 }
 
 #pragma mark - Data Source
@@ -176,7 +211,8 @@
                                                                                               @"numberOfRows" : @(numberOfRows),
                                                                                               @"numberOfOutboundSegments" : @(numberOfOutboundSegments),
                                                                                               @"numberOfInboundSegments" : @(numberOfInboundSegments),
-                                                                                              @"numberOfOutboundLayovers" : @(numberOfOutboundLayovers), @"numberOfInboundLayovers" : @(numberOfInboundLayovers)
+                                                                                              @"numberOfOutboundLayovers" : @(numberOfOutboundLayovers),
+                                                                                              @"numberOfInboundLayovers" : @(numberOfInboundLayovers)
                                                                                               }];
     
     NSMutableArray *cellRows = [NSMutableArray arrayWithCapacity:numberOfRows];
