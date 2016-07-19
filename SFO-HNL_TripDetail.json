@@ -1,0 +1,259 @@
+{
+  "Segments": [
+    {
+      "Id": 1,
+      "OriginStation": 16216,
+      "DestinationStation": 12240,
+      "DepartureDateTime": "2016-08-10T08:15:00",
+      "ArrivalDateTime": "2016-08-10T10:55:00",
+      "Carrier": 1864,
+      "OperatingCarrier": 1864,
+      "Duration": 340,
+      "FlightNumber": "51",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 2,
+      "OriginStation": 12240,
+      "DestinationStation": 13416,
+      "DepartureDateTime": "2016-08-20T07:55:00",
+      "ArrivalDateTime": "2016-08-20T16:15:00",
+      "Carrier": 1169,
+      "OperatingCarrier": 1169,
+      "Duration": 320,
+      "FlightNumber": "10",
+      "JourneyMode": "Flight",
+      "Directionality": "Inbound"
+    },
+    {
+      "Id": 3,
+      "OriginStation": 13416,
+      "DestinationStation": 16216,
+      "DepartureDateTime": "2016-08-20T18:35:00",
+      "ArrivalDateTime": "2016-08-20T19:45:00",
+      "Carrier": 1864,
+      "OperatingCarrier": 1864,
+      "Duration": 70,
+      "FlightNumber": "941",
+      "JourneyMode": "Flight",
+      "Directionality": "Inbound"
+    }
+  ],
+  "BookingOptions": [
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2407040,
+          "Status": "Current",
+          "Price": 566.35,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2fetrp%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d566.35%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-west-1.prod_db425063bfb365d2a3334d3613fe58d7%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a34",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 4499219,
+          "Status": "Current",
+          "Price": 577.5,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2fxpus%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d577.50%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-west-1.prod_a9276c2e07b67743a7064aecaead5948%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a17",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2727399,
+          "Status": "Current",
+          "Price": 577.5,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2fhotw%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d577.50%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-central-1.prod_9a14ffd82bf7083e0f59134d0b808863%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a26",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 4046777,
+          "Status": "Current",
+          "Price": 580.5,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2ftlcy%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d580.50%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-central-1.prod_4a66de6a808f670d2b8988b8f4afaa9f%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a14",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2485523,
+          "Status": "Current",
+          "Price": 587.35,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2fffus%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d587.35%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-west-1.prod_3039814a5f886f96d6b4bdbaa4f408dd%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a27",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2628371,
+          "Status": "Current",
+          "Price": 674.44,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2fgtus%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d674.44%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-west-1.prod_df87eff395446157df71aa192a99cde3%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a26",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2927891,
+          "Status": "Current",
+          "Price": 674.49,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2fjfus%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d674.49%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-west-1.prod_27c29b4fb5bee9a52f5b624ae9d47c5f%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a38",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2503955,
+          "Status": "Current",
+          "Price": 691.46,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2ffnus%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d691.46%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-west-1.prod_1939b0089e039991b48c985b4e5e070f%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a26",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "BookingItems": [
+        {
+          "AgentID": 2473844,
+          "Status": "Current",
+          "Price": 778.49,
+          "Deeplink": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=oklHsInnr4SBqbmNVKmzT9JXoh2kWt23zXT4NCCAxyMO2yPiU%2fBbPe9j5TSbXoiu&url=http%3a%2f%2fwww.apideeplink.com%2ftransport_deeplink%2f4.0%2fUS%2fen-us%2fUSD%2ffard%2f2%2f16216.12240.2016-08-10%2c12240.16216.2016-08-20%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31698%7c51%7c16216%7c2016-08-10T08%3a15%7c12240%7c2016-08-10T10%3a55%2cflight%7c-32249%7c10%7c12240%7c2016-08-20T07%3a55%7c13416%7c2016-08-20T16%3a15%3bflight%7c-31698%7c941%7c13416%7c2016-08-20T18%3a35%7c16216%7c2016-08-20T19%3a45%26carriers%3d-31698%2c-32249%26passengers%3d1%2c0%2c0%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d778.49%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26request_id%3d90b454be-3590-47cb-b638-fb3a2e372566%26deeplink_ids%3deu-central-1.prod_33795f19e8481cab9cb6dee1d818fd7c%26commercial_filters%3dfalse%26q_datetime_utc%3d2016-07-13T18%3a23%3a30",
+          "SegmentIds": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "Places": [
+    {
+      "Id": 16216,
+      "ParentId": 7029,
+      "Code": "SFO",
+      "Type": "Airport",
+      "Name": "San Francisco International"
+    },
+    {
+      "Id": 12240,
+      "ParentId": 3224,
+      "Code": "HNL",
+      "Type": "Airport",
+      "Name": "Honolulu International"
+    },
+    {
+      "Id": 13416,
+      "ParentId": 4464,
+      "Code": "LAX",
+      "Type": "Airport",
+      "Name": "Los Angeles International"
+    },
+    {
+      "Id": 7029,
+      "ParentId": 115,
+      "Code": "SFO",
+      "Type": "City",
+      "Name": "San Francisco"
+    },
+    {
+      "Id": 3224,
+      "ParentId": 115,
+      "Code": "HNL",
+      "Type": "City",
+      "Name": "Honolulu"
+    },
+    {
+      "Id": 4464,
+      "ParentId": 115,
+      "Code": "LAX",
+      "Type": "City",
+      "Name": "Los Angeles"
+    },
+    {
+      "Id": 115,
+      "Code": "US",
+      "Type": "Country",
+      "Name": "United States"
+    }
+  ],
+  "Carriers": [
+    {
+      "Id": 1864,
+      "Code": "VX",
+      "Name": "Virgin America",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/VX.png"
+    },
+    {
+      "Id": 1169,
+      "Code": "HA",
+      "Name": "Hawaiian Airlines",
+      "ImageUrl": "http://s1.apideeplink.com/images/airlines/HA.png"
+    }
+  ],
+  "Query": {
+    "Country": "US",
+    "Currency": "USD",
+    "Locale": "en-us",
+    "Adults": 1,
+    "Children": 0,
+    "Infants": 0,
+    "OriginPlace": "16216",
+    "DestinationPlace": "12240",
+    "OutboundDate": "2016-08-10",
+    "InboundDate": "2016-08-20",
+    "LocationSchema": "Default",
+    "CabinClass": "Economy",
+    "GroupPricing": false
+  }
+}

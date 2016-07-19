@@ -28,9 +28,13 @@
 #import "HelperClass.h"
 
 @interface TripDetailsTableViewController () <UITableViewDelegate, UITableViewDataSource>
+
 @property (nonatomic, strong) UITableView *view;
 @property (nonatomic, strong) TripDetailsRequest *request;
 @property (nonatomic, strong) NSDictionary *dataSourceDictionary;
+
+@property (nonatomic) NSInteger updateCount;
+
 @end
 
 @implementation TripDetailsTableViewController
@@ -98,7 +102,8 @@
         }
     }
     
-    if (needsToUpdate) {
+    if (needsToUpdate && self.updateCount != 15) {
+        self.updateCount++;
         [HelperClass runBlock:^{
             SkyscannerNetworking *network = [SkyscannerNetworking sharedNetworking];
             [network getRequestForBookingDetailsWithSessionKey:self.requestID
@@ -115,6 +120,8 @@
                                                         }
                                                     }];
         } afterTimeInSeconds:5.0f];
+    } else if (self.updateCount == 15) {
+        NSLog(@"   BookingDetails Update Failed.");
     } else {
         NSLog(@"   BookingDetails Update Complete.");
     }
@@ -355,8 +362,6 @@
         NSString *originPlaceCode = self.request.query.originPlace.code;
         NSString *destinationPlaceCode = self.request.query.destinationPlace.code;
         cell.directionalityLabel.text =[NSString stringWithFormat:@"Outbound: %@, %@-%@", outboundDate, originPlaceCode, destinationPlaceCode];
-        
-        
         
         NSInteger totalDuration = 0;
         NSInteger currentNumberOfOutboundLayovers = [dataSource[@"numberOfOutboundLayovers"] integerValue];

@@ -79,7 +79,7 @@
         }];
         
         [self.originView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView.mas_left).offset(45.f);
+            make.left.equalTo(self.contentView.mas_left).offset(50.f);
             make.right.equalTo(self.contentView).offset(-10);
             make.top.equalTo(self.contentView);
             make.height.equalTo(self.originView.informationLabel);
@@ -98,7 +98,7 @@
         }];
         
         [self.flightLine mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(20);
+            make.left.equalTo(self.contentView).offset(25.f);
             make.width.equalTo(@2.5f);
             make.top.equalTo(self.topCircleView.mas_bottom);
             make.bottom.equalTo(self.bottomCircleView.mas_top);

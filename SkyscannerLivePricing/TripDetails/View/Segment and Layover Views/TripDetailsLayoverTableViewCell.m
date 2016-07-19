@@ -39,7 +39,7 @@ return self;
         }];
         
         [self.layoverView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView.mas_left).offset(45.f);
+            make.left.equalTo(self.contentView.mas_left).offset(50.f);
             make.right.equalTo(self.contentView).offset(-10);
             make.centerY.equalTo(self.contentView);
             make.height.equalTo(self.layoverView.informationLabel);
@@ -53,12 +53,12 @@ return self;
 - (void)drawRect:(CGRect)rect {
     UIBezierPath *path = [UIBezierPath bezierPath];
     
-    CGFloat pattern[] = {3, 8};
+    CGFloat pattern[] = {4,8};
     [[UIColor lightGrayColor] setStroke];
     [path setLineDash:pattern count:2 phase:0];
     [path setLineWidth:2.f];
-    [path moveToPoint:CGPointMake(21, 0)];
-    [path addLineToPoint:CGPointMake(21, 50)];
+    [path moveToPoint:CGPointMake(26, 2)];
+    [path addLineToPoint:CGPointMake(26, 50)];
     [path closePath];
     [path stroke];
 }

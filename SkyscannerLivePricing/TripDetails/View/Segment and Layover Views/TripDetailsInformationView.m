@@ -67,7 +67,7 @@
         [self.timeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.informationLabel);
             make.left.equalTo(self);
-            make.width.equalTo(@105);
+            make.width.equalTo(@80);
         }];
         
         [self.informationLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -100,14 +100,14 @@
             [self.informationLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
             break;
         case TripDetailsInformationViewLayoutLongLayover:
-            [self.timeLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE weight:-1.0]];
+            [self.timeLabel setFont:[UIFont systemFontOfSize:(TRIP_FONT_SIZE - 2) weight:-1.0]];
             [self.timeLabel setTextColor:[UIColor redColor]];
             [self.informationLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE weight:-1.0]];
             [self.informationLabel setTextColor:[UIColor redColor]];
             break;
             
         case TripDetailsInformationViewLayoutShortLayover:
-            [self.timeLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
+            [self.timeLabel setFont:[UIFont systemFontOfSize:(TRIP_FONT_SIZE - 2)]];
             [self.timeLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
             [self.informationLabel setFont:[UIFont systemFontOfSize:TRIP_FONT_SIZE]];
             [self.informationLabel setTextColor:[UIColor colorWithRed:0.494 green:0.494 blue:0.494 alpha:1.00]];
