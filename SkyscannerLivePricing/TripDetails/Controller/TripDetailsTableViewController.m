@@ -372,7 +372,6 @@
                 totalDuration += [dateComponents minute];
                 currentNumberOfOutboundLayovers--;
             }
-            
         }
         NSInteger hour = totalDuration / 60;
         NSInteger minute = totalDuration % 60;
