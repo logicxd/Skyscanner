@@ -12,3 +12,9 @@ A mockup of Skyscanner's application that searches for roundtrip airplane ticket
 * More Foundation libraries learned: NSAttributedString, NSDate, NSDateFormatter, NSRange, and CGRect.
 
 ![Skyscanner Gif](https://camo.githubusercontent.com/2a5d180a2b88066b2c10259c2b6232c86c82bd3b/687474703a2f2f692e67697068792e636f6d2f336f37544b4748456f4b5878426f6a6177672e676966)
+
+---
+
+### Acknowledgements
+My mentor [Rey](https://github.com/reygonzales) for guiding us through the assignment. This assignment was done together with  [Alaric](https://github.com/AlaricGonzales) at our internship at PlanChat. 
+
