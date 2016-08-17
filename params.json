@@ -1,0 +1,6 @@
+{
+  "name": "Skyscanner",
+  "tagline": "iOS | Objective-C | JSON | Networking | Design Patterns",
+  "body": "# Skyscanner\r\n\r\nA mockup of Skyscanner's application that searches for roundtrip airplane tickets.\r\n\r\n### Overview\r\n\r\n* Learning how to use UITableView and UITableViewCells.\r\n* Design Patterns: Factory, Model-View-Controller architecture, Singleton, and anonymous functions(blocks).\r\n* [AFNetworking](https://github.com/AFNetworking/AFNetworking): API calls using POST, GET, and PUT.\r\n* JSON parsing for data source.\r\n* Use of [FBShimmering](https://github.com/facebook/Shimmer) as a loading screen.\r\n* More Foundation libraries learned: NSAttributedString, NSDate, NSDateFormatter, NSRange, and CGRect.\r\n\r\n![Skyscanner Gif](https://camo.githubusercontent.com/2a5d180a2b88066b2c10259c2b6232c86c82bd3b/687474703a2f2f692e67697068792e636f6d2f336f37544b4748456f4b5878426f6a6177672e676966)\r\n\r\n---\r\n\r\n### Acknowledgements\r\nMy mentor [Rey](https://github.com/reygonzales) for guiding us through the assignment. This assignment was done together with  [Alaric](https://github.com/AlaricGonzales) at our internship at PlanChat. \r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
