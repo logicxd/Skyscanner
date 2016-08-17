@@ -255,10 +255,7 @@
     [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
     leg.timeDeparture = [formatter dateFromString:legJson[@"Departure"]];
     leg.timeArrival = [formatter dateFromString:legJson[@"Arrival"]];
-    
-    NSArray *segments = [self segmentsWithIds:@[]];
-    NSLog(@"%@", segments);
-    
+        
     return leg;
 }
 

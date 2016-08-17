@@ -22,9 +22,9 @@
     self.window = [[UIWindow alloc] initWithFrame:screenRect];
     SkyscannerTableViewController *skyscannerTableViewController = [[SkyscannerTableViewController alloc] initWithStyle:UITableViewStylePlain];
     skyscannerTableViewController.originStationCode = @"sfo-sky";
-    skyscannerTableViewController.destinationStationCode = @"cnx-sky";
-    skyscannerTableViewController.departureDate = [NSDate dateWithTimeIntervalSince1970:1470857844];
-    skyscannerTableViewController.returnDate = [NSDate dateWithTimeIntervalSince1970:1471721844];
+    skyscannerTableViewController.destinationStationCode = @"sna-sky";
+    skyscannerTableViewController.departureDate = [NSDate dateWithTimeIntervalSinceNow:5000];
+    skyscannerTableViewController.returnDate = [NSDate dateWithTimeIntervalSinceNow:500000];
     
     self.viewController = [[UINavigationController alloc] initWithRootViewController:skyscannerTableViewController];
     [self.window setRootViewController:self.viewController];
