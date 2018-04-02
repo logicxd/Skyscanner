@@ -11,7 +11,7 @@ A mockup of Skyscanner's application that searches for roundtrip airplane ticket
 * Use of [FBShimmering](https://github.com/facebook/Shimmer) as a loading screen.
 * More Foundation libraries learned: NSAttributedString, NSDate, NSDateFormatter, NSRange, and CGRect.
 
-![Skyscanner Gif](https://camo.githubusercontent.com/2a5d180a2b88066b2c10259c2b6232c86c82bd3b/687474703a2f2f692e67697068792e636f6d2f336f37544b4748456f4b5878426f6a6177672e676966)
+![Skyscanner Gif](https://user-images.githubusercontent.com/12219300/38184813-19e46e60-35ff-11e8-98b2-7281ae83e3e2.gif)
 
 ---
 
